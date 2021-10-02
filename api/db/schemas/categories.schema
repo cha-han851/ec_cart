@@ -1,0 +1,7 @@
+create_table 'categories', charset: 'utf8mb4', collation: 'utf8mb4_bin', force: :cascade do |t|
+  t.string   'name',          null: false, comment: 'カテゴリー名'
+  t.string   'serial_prefix', null: false, comment: 'シリアル番号 接頭辞'
+  t.text     'description',                comment: 'カテゴリー説明'
+  t.datetime 'created_at',    null: false, precision: 6
+  t.datetime 'updated_at',    null: false, precision: 6
+end

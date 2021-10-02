@@ -1,0 +1,10 @@
+create_table 'purchase_products', charset: 'utf8mb4', collation: 'utf8mb4_bin', force: :cascade do |t|
+  t.integer  'total_count',         default: 0, null: false, comment: '商品別 購入数'
+  t.integer  'total_price',         default: 0, null: false, comment: '商品別 合計金額'
+  t.datetime 'created_at',                      null: false, precision: 6
+  t.datetime 'updated_at',                      null: false, precision: 6
+  t.bigint   'purchase_history_id',             null: false, comment: '商品購入履歴ID'
+  t.bigint   'product_id',                      null: false, comment: '商品ID'
+  t.index    ["purchase_history_id"], name: "index_purchase_products_on_purchase_history_id"
+  t.index    ["product_id"], name: "index_purchase_products_on_product_id"
+end

@@ -1,0 +1,22 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV['MYSQL_USERNAME'] %>
+  password: <%= ENV['MYSQL_PASSWORD'] %>
+  socket: /tmp/mysql.sock
+  host: <%= ENV['DOCKER_MYSQL_HOST'] %>
+
+development:
+  <<: *default
+  database: ec_cart
+
+test:
+  <<: *default
+  database: ec_cart_test
+
+production:
+  <<: *default
+  database: ec_cart_production
+  username: api
+  password: <%= ENV['API_DATABASE_PASSWORD'] %>

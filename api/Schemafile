@@ -1,0 +1,6 @@
+require 'db/schemas/accounts.schema'
+require 'db/schemas/categories.schema'
+require 'db/schemas/products.schema'
+require 'db/schemas/purchase_histories.schema'
+require 'db/schemas/purchase_products.schema'
+require 'db/schemas/deliveries.schema'

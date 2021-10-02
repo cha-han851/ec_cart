@@ -1,0 +1,23 @@
+create_table 'accounts', charset: 'utf8mb4', collation: 'utf8mb4_bin', force: :cascade do |t|
+  t.string   'provider',              default: 'email', null: false
+  t.string   'uid',                   default: '',      null: false
+  t.string   'encrypted_password',    default: '',      null: false
+  t.string   'reset_password_token'
+  t.datetime 'reset_password_sent_at'
+  t.boolean  'allow_password_change', default: false
+  t.datetime 'remember_created_at'
+  t.string   'first_name',                              null: false, comment: '名'
+  t.string   'last_name',                               null: false, comment: '姓'
+  t.string   'email',                                   null: false, comment: 'メールアドレス'
+  t.string   'phone',                                   null: false, comment: '電話番号'
+  t.string   'zip',                                     null: false, comment: '郵便番号'
+  t.string   'address_one',                             null: false, comment: '都道府県 市区町村'
+  t.string   'address_two',                             null: false, comment: '番地'
+  t.string   'address_three',                                        comment: '建物名'
+  t.text     'tokens'
+  t.datetime 'created_at', precision: 6,                null: false
+  t.datetime 'updated_at', precision: 6,                null: false
+  t.index    ['email'], name: 'index_accounts_on_email', unique: true
+  t.index    ['reset_password_token'], name: 'index_accounts_on_reset_password_token', unique: true
+  t.index    ['uid', 'provider'], name: 'index_accounts_on_uid_and_provider', unique: true
+end

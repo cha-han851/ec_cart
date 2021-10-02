@@ -1,0 +1,12 @@
+create_table 'deliveries', charset: 'utf8mb4', collation: 'utf8mb4_bin', force: :cascade do |t|
+  t.string   'first_name',    null: false, comment: '名'
+  t.string   'last_name',     null: false, comment: '姓'
+  t.string   'email',         null: false, comment: 'メールアドレス'
+  t.string   'phone',         null: false, comment: '電話番号'
+  t.string   'zip',           null: false, comment: '郵便番号'
+  t.string   'address_one',   null: false, comment: '都道府県 市区町村'
+  t.string   'address_two',   null: false, comment: '番地'
+  t.string   'address_three',              comment: '建物名'
+  t.datetime 'created_at',    null: false, precision: 6
+  t.datetime 'updated_at',    null: false, precision: 6
+end
